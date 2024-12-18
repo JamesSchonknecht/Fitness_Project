@@ -1,0 +1,9 @@
+- How does weight and rate of weight gain correlate to calories eaten in preceding days?
+- How does performance in gym correlate to calories consumed?
+- How does macronutrient proportions change over time? Does this correlate to training performance?
+- Workout durations over time - getting shorter or longer? - Effect on volume/performance?
+- Have ability to track performance over defined time period
+	- Getting stronger or weaker - volume, max weight
+	- What factors could influence this? (Nutrition, training frequency, volume)
+- Identify potential plateaus in performance - inform change in exercise or rep range etc
+	
