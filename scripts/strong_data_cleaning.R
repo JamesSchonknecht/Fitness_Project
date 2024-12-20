@@ -26,3 +26,13 @@ for (line in strong_data[2:length(strong_data)]) {
 # Create a csv file with cleaned data
 cleaned_csv_name <- paste0("CLEANED_", csv_file_name, ".csv")
 writeLines(cleaned_lines, con = paste0("data/", cleaned_csv_name))
+
+# Prompt user to delete or keep original data
+cat("Delete original (uncleaned) data: ", csv_file_name, ".csv", " (Y/N)?", sep = "")
+delete_file_choice <- toupper(readline())
+
+# Delete original data if user enters "Y" or "y"
+if (delete_file_choice == "Y") {
+  file.remove(csv_path)
+  cat(csv_file_name, ".csv", " DELETED", sep = "")
+}
