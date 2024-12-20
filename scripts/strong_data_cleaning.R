@@ -1,7 +1,12 @@
+# Prompt user for file name to load
+cat("Enter name of csv file: ")
+csv_file_name <- readline()
+csv_file_name <- gsub("\\.csv", "", csv_file_name)
+
 # Load data
-setwd("C:/Users/james/OneDrive/PowerBI Practice")
-file_path <- "C:/Users/james/OneDrive/PowerBI Practice/strong965753607026263731.csv"
-strong_data <- readLines(file_path)
+setwd("C:/Users/james/OneDrive/PowerBI Practice/Fitness_Project")
+csv_path <- paste0("data", "/", csv_file_name, ".csv")
+strong_data <- readLines(csv_path)
 
 # Initialise vector with header row to store lines
 cleaned_lines <- c(strong_data[1])
@@ -19,5 +24,5 @@ for (line in strong_data[2:length(strong_data)]) {
 }
 
 # Create a csv file with cleaned data
-writeLines(cleaned_lines, con = "cleaned_strong965753607026263731.csv")
-
+cleaned_csv_name <- paste0("CLEANED_", csv_file_name, ".csv")
+writeLines(cleaned_lines, con = paste0("data/", cleaned_csv_name))
