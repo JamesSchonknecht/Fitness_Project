@@ -12,7 +12,9 @@ strong_file_info <- file.info(strong_filenames)
 most_recent_strong <- rownames(strong_file_info)[which.max(strong_file_info$ctime)]
 
 # Renaming most recently created strong .csv file
-file.rename(from = most_recent_strong, to = "../data/strong_data.csv")
+if (length(most_recent_strong) != 0) {
+  file.rename(from = most_recent_strong, to = "../data/strong_data.csv")
+}
 
 # Load data
 csv_path <- "../data/strong_data.csv"
@@ -32,6 +34,9 @@ for (line in strong_data[2:length(strong_data)]) {
     cleaned_lines[length(cleaned_lines)] <- line
   }
 }
+
+# Update strong_data.csv to contain cleaned data
+writeLines(cleaned_lines, con = "../data/strong_data.csv")
 
 # Prompt user to delete old strong .csv files
 cat("Delete all old strong .csv files? (Y/N)?")
@@ -56,7 +61,9 @@ macrofactor_file_info <- file.info(macrofactor_filenames)
 most_recent_macrofactor <- rownames(macrofactor_file_info)[which.max(macrofactor_file_info$ctime)]
 
 # Renaming most recently created macrofactor .xlsx file
-file.rename(from = most_recent_macrofactor, to = "../data/MacroFactor_data.xlsx")
+if (length(most_recent_macrofactor) != 0) {
+  file.rename(from = most_recent_macrofactor, to = "../data/MacroFactor_data.xlsx")
+}
 
 # Prompt user to delete all old Macrofactor data files
 cat("Delete all old Macrofactor .xlsx files? (Y/N)")
@@ -67,4 +74,4 @@ if (delete_macrofactor_files_choice == "Y") {
   file.remove(macrofactor_filenames)
 }
 
-
+cat("Script run successfully")
