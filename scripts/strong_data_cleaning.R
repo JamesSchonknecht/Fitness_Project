@@ -24,7 +24,7 @@ for (line in strong_data[2:length(strong_data)]) {
 }
 
 # Create a csv file with cleaned data
-cleaned_csv_name <- paste0("CLEANED_", csv_file_name, ".csv")
+cleaned_csv_name <- paste0("CLEANED_", "strong_data", ".csv")
 writeLines(cleaned_lines, con = paste0("data/", cleaned_csv_name))
 
 # Prompt user to delete or keep original data
