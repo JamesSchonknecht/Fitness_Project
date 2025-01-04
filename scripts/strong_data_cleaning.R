@@ -1,3 +1,5 @@
+########## Strong data ########## 
+
 # Prompt user for file name to load
 cat("Enter name of csv file: ")
 csv_file_name <- readline()
@@ -38,7 +40,7 @@ if (delete_file_choice == "Y") {
 }
 
 
-# MacroFactor data
+########## MacroFactor data ##########
 
 # Create character vector of file names and find those matching the MacroFactor... pattern
 macrofactor_filenames <- list.files("../data", full.names = TRUE)
