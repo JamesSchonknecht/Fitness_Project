@@ -35,6 +35,9 @@ for (line in strong_data[2:length(strong_data)]) {
   }
 }
 
+# Remove all instances of "Omni-Grip Lat " - the app has incorrectly appended this to "1-Arm Half Kneeling Lat Pulldown"
+cleaned_lines <- gsub("1-Arm Half Kneeling Lat PulldownOmni-Grip Lat ", "1-Arm Half Kneeling Lat Pulldown", cleaned_lines)
+
 # Update strong_data.csv to contain cleaned data
 writeLines(cleaned_lines, con = "../data/strong_data.csv")
 
