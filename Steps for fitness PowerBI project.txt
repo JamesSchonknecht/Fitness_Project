@@ -1,6 +1,0 @@
-- Cleaned data with R script `strong_data_cleaning.R`
-- Cleaned data using Power Query
-- Created star schema in Power Query for strong workout data
-- Added data for nutritional info, nutrition goals, scale body weight from MacroFactor app
-- Cleaned nutritional data in Power Query
-- Added new cleaned data from MacroFactor to star schema data model
