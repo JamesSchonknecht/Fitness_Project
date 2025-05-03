@@ -1,5 +1,2 @@
-
-/data/*.csv
-/data/*.xlsx
 .RData
 .Rhistory
