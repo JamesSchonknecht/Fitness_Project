@@ -37,8 +37,6 @@ This project analyses my personal workout and nutrition data to uncover trends a
 7. Created dynamic visualisations in Power BI, alongside creation of measures and calculated columns using DAX, including:
     - Moving average body weight over time and rate of change over different windows of time.
     - Daily macronutrient and calorie consumption in comparison to targets.
-    - Number of workouts and average duration of workouts over time.
+    - Number of workouts, total and average duration of workouts over time.
     - Most frequently performed exercises.
     - Maximum daily volume and weight lifted over time for every exercise.
-
-9. Visualisations were created within Power BI, utilising a large number of custom DAX measures and calculated columns. For example, one measure calculates the moving average body weight using multiple scale weight measurements. The number of days included in this calculation can be dynamically changed using a slider.
