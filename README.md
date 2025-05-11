@@ -2,6 +2,8 @@
 ## 🔎 Project Overview
 This project analyses my personal workout and nutrition data to uncover trends and insights over time. The goal is to demonstrate skills in data cleaning, visualization, and deriving actionable insights from health-related data.
 
+---
+
 ## 📁 Project Contents
 - Data Files:
   - `data/MacroFactor_data.xlsx` - Nutrition and body weight data imported from the 'Macrofactor' application as an Excel workbook. Contains data such as daily number of calories and grams of macronutrients (i.e. protein, fat, carbohydrates) consumed and body weight measurements
@@ -13,8 +15,18 @@ This project analyses my personal workout and nutrition data to uncover trends a
   - `strong_macrofactor_data_cleaning.R` - R script that performs initial cleaning of the raw data from 'Strong' and 'Macrofactor' apps prior to importing the data into Power BI
 - Power BI Report:
   - `Fitness and Nutrition Report.pbix` - The final Power BI report file containing the final data model with cleaned data and visualisations
+
+---
+
+## 🛠️ Tools & Technologies
+- Power BI (Power Query, M Language, DAX, Data Modeling)
+- R (Data Cleaning Automation)
+- Microsoft Excel
+- CSV / XLSX data handling
+
+---
  
-## 📋 Project Steps Taken:
+## 📋 Project Steps:
 1. Exported data from *Strong* (CSV) and *Macrofactor* (Excel) apps from Android and transferred to PC.
 2. Assessed and imported both datasets into Power BI using Power Query. Found inconsistencies in *Strong* data that required external handling.
 3. Developed an R script to:
@@ -40,3 +52,7 @@ This project analyses my personal workout and nutrition data to uncover trends a
     - Number of workouts, total and average duration of workouts over time.
     - Most frequently performed exercises.
     - Maximum daily volume and weight lifted over time for every exercise.
+
+---
+
+
