@@ -1,6 +1,8 @@
 # Power BI Fitness and Nutrition Project
 ## 🔎 Project Overview
-This project analyses my personal workout and nutrition data to uncover trends and insights over time. The goal is to demonstrate skills in data cleaning, visualization, and deriving actionable insights from health-related data.
+This project analyzes my personal workout and nutrition data to uncover trends in training performance, dietary habits, and body composition over time. By combining data from the Strong and Macrofactor apps, I built an integrated Power BI dashboard supported by a custom data model and R-based preprocessing workflow.
+
+The aim is to demonstrate core data analytics skills including data cleaning, modeling, and visualization using real-world health data. The final report provides actionable insights such as training volume progression, workout frequency, and macronutrient intake patterns.
 
 ---
 
