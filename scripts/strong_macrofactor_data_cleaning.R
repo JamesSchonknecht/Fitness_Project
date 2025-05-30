@@ -1,3 +1,6 @@
+# Loading libraries
+library(readxl)
+
 ########## Strong data ########## 
 setwd("C:/Users/james/OneDrive/PowerBI Practice/Fitness_Project/scripts")
 
@@ -53,28 +56,51 @@ if (delete_strong_files_choice == "Y") {
 
 ########## MacroFactor data ##########
 
-# Create character vector of file names and find those matching the "MacroFactor..." pattern
+# Get file names matching the pattern of 'MacroFactor-...'
 macrofactor_filenames <- list.files("../data", full.names = TRUE)
-macrofactor_filenames <- grep("MacroFactor-\\d+", macrofactor_filenames, value = TRUE)
+macrofactor_filenames <- grep("MacroFactor.+", macrofactor_filenames, value = TRUE)
 
-# Get Macrofactor file information
-macrofactor_file_info <- file.info(macrofactor_filenames)
+# Initialise empty lists to store names of quick export and main data excel files
+quick_export_file_names <- list()
+main_data_file_names <- list()
 
-# Finding most recently created macrofactor .xlsx file
-most_recent_macrofactor <- rownames(macrofactor_file_info)[which.max(macrofactor_file_info$ctime)]
-
-# Renaming most recently created macrofactor .xlsx file
-if (length(most_recent_macrofactor) != 0) {
-  file.rename(from = most_recent_macrofactor, to = "../data/MacroFactor_data.xlsx")
+# Get names of quick export and main data MacroFactor workbooks
+for (file in macrofactor_filenames) {
+  print(file)
+  if (excel_sheets(file)[1] == 'Quick Export') {
+    print('Quick Export')
+    quick_export_file_names <- append(quick_export_file_names, file)
+  } else {
+    print('Main Data')
+    main_data_file_names <- append(main_data_file_names, file)
+  }
+  cat('\n')
 }
+
+# Get most recent quick export file
+quick_export_file_info <- file.info(unlist(quick_export_file_names))
+most_recent_quick_export <- rownames(quick_export_file_info)[which.max(macrofactor_file_info$ctime)]
+
+# Get most recent main data file
+main_data_file_info <- file.info(unlist(main_data_file_names))
+most_recent_main_data <- rownames(main_data_file_info)[which.max(macrofactor_file_info$ctime)]
+
+# Rename most recent quick export file
+file.rename(from=most_recent_quick_export, to='../data/MacroFactor_quick_export.xlsx')
+
+# Rename most recent main data file
+file.rename(from=most_recent_main_data, to='../data/MacroFactor_main_data.xlsx')
 
 # Prompt user to delete all old Macrofactor data files
 cat("Delete all old Macrofactor .xlsx files? (Y/N)")
 delete_macrofactor_files_choice <- toupper(readline())
 
+# Get names of old macrofactor files
+old_macrofactor_filenames <- grep("MacroFactor-\\d+", macrofactor_filenames, value = TRUE)
+
 # Delete all old Macrofactor .xlsx files if "y" or "Y" is entered
 if (delete_macrofactor_files_choice == "Y") {
-  file.remove(macrofactor_filenames)
+  file.remove(old_macrofactor_filenames)
 }
 
 cat("Script run successfully")
