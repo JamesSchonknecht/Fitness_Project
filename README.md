@@ -4,6 +4,14 @@ This project analyzes my personal workout and nutrition data to uncover trends i
 
 The aim is to demonstrate core data analytics skills including data cleaning, modeling, and visualization using real-world health data. The final report provides actionable insights such as training volume progression, workout frequency, and macronutrient intake patterns.
 
+<p align="center">
+  <img src="figures/dashboard_screenshot.png" alt="Dashboard" width="750"/>
+</p>
+
+<p align="center">
+  <img src="figures/nutrition_page_screenshot.png" alt="Nutrtion Page" width="750"/>
+</p>
+
 ---
 
 ## 📁 Project Contents
